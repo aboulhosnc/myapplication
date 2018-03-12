@@ -1,5 +1,6 @@
 package com.example.chady.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -33,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    public void onButtonClick(View v)
+    {
+        if(v.getId() ==R.id.Bdisplay)
+        {
+            Intent i = new Intent(MainActivity.this, Display.class);
+            startActivity(i);
+        }
     }
 
     @Override
