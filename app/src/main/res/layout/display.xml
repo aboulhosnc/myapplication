@@ -8,5 +8,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Our new activity has started" />
+        android:text="Welcome," />
+
+    <TextView
+        android:id="@+id/TVusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/emptyString" />
 </LinearLayout>
