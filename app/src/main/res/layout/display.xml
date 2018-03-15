@@ -5,15 +5,16 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="52dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Welcome," />
 
     <TextView
         android:id="@+id/TVusername"
-        android:layout_width="wrap_content"
+        android:layout_width="303dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/emptyString" />
+
 </LinearLayout>
