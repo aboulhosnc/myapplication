@@ -21,12 +21,36 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username" />
+
+    <EditText
+        android:id="@+id/TFusername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password" />
+
+    <EditText
+        android:id="@+id/TFpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
     <Button
-        android:id="@+id/Bdisplay"
+        android:id="@+id/Blogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onButtonClick"
-        android:text="Display" />
+        android:text="Log In" />
 
     <include layout="@layout/content_main" />
 
