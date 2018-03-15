@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,9 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButtonClick(View v)
     {
-        if(v.getId() ==R.id.Bdisplay)
+        if(v.getId() ==R.id.Blogin)
         {
+            EditText a = (EditText)findViewById(R.id.TFusername);
+            String str = a.getText().toString();
+
             Intent i = new Intent(MainActivity.this, Display.class);
+            i.putExtra("Username",str);
             startActivity(i);
         }
     }
