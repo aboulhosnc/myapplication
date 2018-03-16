@@ -38,12 +38,16 @@ public class SignUp extends Activity {
             String pass1str = pass1.getText().toString();
             String pass2str = pass2.getText().toString();
 
+
+
             if(!pass1str.equals(pass2str))
             {
                 // pop up message
-                Toast pass = Toast.makeText(SignUp.this, "Passwords don't match!" , Toast.LENGTH_SHORT);
-                pass.show();
+                 Toast pass = Toast.makeText(SignUp.this, "Passwords don't match!" , Toast.LENGTH_SHORT);
+                 pass.show();
+
             }
+
         }
     }
 

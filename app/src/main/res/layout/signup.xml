@@ -72,6 +72,6 @@
         android:id="@+id/Bsignupbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onSignUpClick"
+        android:onClick="onSignupClick"
         android:text="Sign up" />
 </LinearLayout>
