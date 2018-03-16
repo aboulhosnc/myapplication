@@ -52,6 +52,13 @@
         android:onClick="onButtonClick"
         android:text="Log In" />
 
+    <Button
+        android:id="@+id/Bsignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="Sign Up Here" />
+
     <include layout="@layout/content_main" />
 
     <android.support.design.widget.FloatingActionButton
