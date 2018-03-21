@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     SQLiteDatabase db;
 
     private static final String TABLE_CREATE = "create table contacts (id integer primary key not null , " +
-            "name text not null, email text not null, uname text not null, pass text not null);";
+            "name text not null , email text not null , uname text not null , pass text not null);";
 
     public DatabaseHelper(Context context)
     {
@@ -44,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        String query = "select * from contacts";
+        String query = "select * from " + TABLE_NAME;
         Cursor cursor = db.rawQuery(query, null);
         int count = cursor.getCount();
 
@@ -62,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public String searchPass(String uname)
     {
         db = this.getReadableDatabase();
-        String query = "select uname, pass from " +TABLE_NAME;
+        String query = "select uname, pass from "+TABLE_NAME;
         Cursor cursor = db.rawQuery(query, null);
         String a, b;
         b = "not found";
@@ -88,7 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        String query = "DROP TABLE IF EXISTS" + TABLE_NAME;
+        String query = "DROP TABLE IF EXISTS " + TABLE_NAME;
         db.execSQL(query);
         this.onCreate(db);
 
