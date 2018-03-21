@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     SQLiteDatabase db;
 
-    private static final String TABLE_CREATE = "create table" + TABLE_NAME + "(id integer primary key not null auto_increment , " +
+    private static final String TABLE_CREATE = "create table" + TABLE_NAME + "(id integer primary key not null , " +
             COLUMN_NAME + " text not null , " + COLUMN_EMAIL + "text not null , " + COLUMN_UNAME + " text not null , " + COLUMN_PASS + " text not null);";
 
     public DatabaseHelper(Context context)
@@ -43,6 +43,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     {
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+
+        String query = "select * from contacts";
+        Cursor cursor = db.rawQuery(query, null);
+        int count = cursor.getCount();
+
+        values.put(COLUMN_ID, count);
         values.put(COLUMN_NAME, c.getName());
         values.put(COLUMN_EMAIL, c.getEmail());
         values.put(COLUMN_UNAME, c.getUname());
