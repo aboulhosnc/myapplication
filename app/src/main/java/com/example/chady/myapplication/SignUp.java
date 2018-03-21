@@ -47,6 +47,15 @@ public class SignUp extends Activity {
                  pass.show();
 
             }
+            else
+            {
+                // insert the details in database
+                Contact c = new Contact();
+                c.setName(namestr);
+                c.setEmail(emailstr);
+                c.setUname(unamestr);
+                c.setPass(pass1str);
+            }
 
         }
     }
