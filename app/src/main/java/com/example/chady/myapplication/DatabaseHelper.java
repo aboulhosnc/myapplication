@@ -1,5 +1,6 @@
 package com.example.chady.myapplication;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -34,6 +35,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE);
         this.db = db;
+
+    }
+
+    public void insertContact(Contact c)
+    {
+        db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, c.getName());
+        values.put(COLUMN_EMAIL, c.getEmail());
+        values.put(COLUMN_UNAME, c.getUname());
+        values.put(COLUMN_PASS, c.getPass());
+
+        db.insert(TABLE_NAME, null, values);
 
     }
 

@@ -5,9 +5,9 @@ package com.example.chady.myapplication;
  */
 
 public class Contact {
-    int id;
+    //int id;
     String name ,email, uname, pass;
-
+/*
     public void setId(int id)
     {
         this.id = id;
@@ -19,7 +19,7 @@ public class Contact {
         return this.id;
 
     }
-
+*/
     public void setName (String name)
     {
         this.name = name;
