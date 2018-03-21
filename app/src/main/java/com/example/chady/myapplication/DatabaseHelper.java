@@ -2,6 +2,7 @@ package com.example.chady.myapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -48,6 +49,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_PASS, c.getPass());
 
         db.insert(TABLE_NAME, null, values);
+        db.close();
+
+    }
+
+    public String searchPass(String uname)
+    {
+        db = this.getReadableDatabase();
+        String query = "select uname, pass from " +TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+        String a, b;
+        b = "not found";
+
+        if(cursor.moveToFirst())
+        {
+            do{
+                a = cursor.getString(0);
+
+
+                if(a.equals(uname))
+                {
+                    b = cursor.getString(1);
+                    break;
+                }
+
+            }
+            while(cursor.moveToNext());
+        }
+        return b;
 
     }
 
