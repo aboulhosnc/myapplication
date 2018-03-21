@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             EditText b = (EditText)findViewById(R.id.TFpassword);
             String pass = a.getText().toString();
 
-            String password = helper.searchPass.(str);
+            String password = helper.searchPass(str);
 
             if(pass.equals(password))
             {
